@@ -1,6 +1,12 @@
-# How to create a REST API in Golang
+# Serverless example app with Go and Qwik
 
-An example serverless app created with SST.
+Exmaple app with SST framework, Qwik frontend, implemented Magic passowrdless auth
+
+## Tools
+
+- [SST Docs](https://docs.sst.dev/)
+- [Qwik](https://qwik.builder.io/)
+- [Magic](https://magic.link/auth)
 
 ## Getting Started
 
