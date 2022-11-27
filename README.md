@@ -4,9 +4,10 @@ Exmaple app with SST framework, Qwik frontend, implemented Magic passowrdless au
 
 ## Tools
 
-- [SST Docs](https://docs.sst.dev/)
+- [SST](https://docs.sst.dev/)
 - [Qwik](https://qwik.builder.io/)
-- [Magic](https://magic.link/auth)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Magic Auth](https://magic.link/auth)
 
 ## Getting Started
 
