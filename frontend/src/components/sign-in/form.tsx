@@ -1,4 +1,4 @@
-import { $, component$, PropFunction, useStore } from '@builder.io/qwik';
+import { $, component$, PropFunction, useSignal } from '@builder.io/qwik';
 import { Button } from '../ui-components/button';
 import { TextInput } from '../ui-components/text-input';
 
@@ -7,9 +7,9 @@ type FormProps = {
 };
 
 export const SignInForm = component$((props: FormProps) => {
-  const state = useStore({ email: '' });
+  const email = useSignal<string>('');
 
-  const onFormSubmit$ = $(() => props.onFormSubmit$(state.email));
+  const onFormSubmit$ = $(() => props.onFormSubmit$(email.value));
 
   return (
     <form className="space-y-6" preventdefault:submit onSubmit$={onFormSubmit$}>
@@ -24,9 +24,9 @@ export const SignInForm = component$((props: FormProps) => {
             type="email"
             autoComplete="email"
             required
-            value={state.email}
+            value={email.value}
             onChange$={async (event) => {
-              state.email = event.target.value;
+              email.value = event.target.value;
             }}
           />
         </div>

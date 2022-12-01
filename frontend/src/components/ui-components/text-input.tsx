@@ -1,4 +1,4 @@
-import { PropFunction, QwikChangeEvent } from '@builder.io/qwik';
+import { component$, PropFunction, QwikChangeEvent } from '@builder.io/qwik';
 
 type TextInputProps = {
   id: string;
@@ -10,7 +10,7 @@ type TextInputProps = {
   onChange$: PropFunction<(event: QwikChangeEvent<HTMLInputElement>) => void>;
 };
 
-export const TextInput = (props: TextInputProps) => {
+export const TextInput = component$((props: TextInputProps) => {
   return (
     <input
       id={props.id}
@@ -23,4 +23,4 @@ export const TextInput = (props: TextInputProps) => {
       onChange$={props.onChange$}
     />
   );
-};
+});

@@ -22,21 +22,18 @@ export default component$(() => {
 
   useContextProvider(UserContext, state);
 
-  useClientEffect$(
-    async () => {
-      state.loading = true;
-      const isLoggedIn = await magic.user.isLoggedIn();
+  useClientEffect$(async () => {
+    state.loading = true;
+    const isLoggedIn = await magic.user.isLoggedIn();
 
-      if (isLoggedIn) {
-        const userData = await magic.user.getMetadata();
+    if (isLoggedIn) {
+      const userData = await magic.user.getMetadata();
 
-        state.user = userData;
-      } else {
-        state.user = null;
-      }
-    },
-    { eagerness: 'load' }
-  );
+      state.user = userData;
+    } else {
+      state.user = null;
+    }
+  });
 
   return (
     <QwikCityProvider>

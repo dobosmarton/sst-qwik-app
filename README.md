@@ -1,6 +1,6 @@
 # Serverless example app with Go and Qwik
 
-Exmaple app with SST framework, Qwik frontend, implemented Magic passowrdless auth
+Exmaple app with SST framework, Qwik frontend, implemented Magic passwordless auth
 
 ## Tools
 

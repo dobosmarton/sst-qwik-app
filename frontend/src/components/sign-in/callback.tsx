@@ -11,27 +11,24 @@ export const Callback = component$(() => {
   const location = useLocation();
   const state = useContext(UserContext);
 
-  useClientEffect$(
-    async () => {
-      const magicCredential = new URLSearchParams(location.query).get('magic_credential');
+  useClientEffect$(async () => {
+    const magicCredential = new URLSearchParams(location.query).get('magic_credential');
 
-      if (magicCredential) {
-        const didToken = await magic.auth.loginWithCredential();
+    if (magicCredential) {
+      const didToken = await magic.auth.loginWithCredential();
 
-        const res = await login(didToken);
+      const res = await login(didToken);
 
-        if (res.status === 200) {
-          // Set the UserContext to the now logged in user
-          const user = await magic.user.getMetadata();
+      if (res.status === 200) {
+        // Set the UserContext to the now logged in user
+        const user = await magic.user.getMetadata();
 
-          state.user = user;
+        state.user = user;
 
-          nav.path = '/home';
-        }
+        nav.path = '/home';
       }
-    },
-    { eagerness: 'load' }
-  );
+    }
+  });
 
   return <div>Loading...</div>;
 });
